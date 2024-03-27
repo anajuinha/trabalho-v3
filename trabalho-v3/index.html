@@ -1,0 +1,330 @@
+<html>
+<head>
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Overlock+SC&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+body,
+html {
+  width: fit-content;
+  margin: 0;
+}
+
+* {
+  color: #4b3832;
+  font-family: "Overlock SC", sans-serif;
+}
+#sidemenu {
+  display: flex;
+  right: 0;
+  position: fixed;
+  top: 0;
+  flex-direction: column;
+  height: 100%;
+  background: #854442;
+  width: 0;
+  top: 130px;
+  transition: 0.5s;
+  text-wrap: nowrap;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px 20px;
+font-size: 22px;
+display: flex;
+    align-items: center;
+    width: 300px;
+color: #fff4e6;
+}
+
+header {
+  background: #4b3832;
+  height: 100px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+z-index:1;
+padding: 15px;
+}
+
+.logo {
+  filter: invert(1);
+  width: 38%;
+  transform: rotateY(180deg);
+  position: relative;
+  left: 20px;
+}
+
+#teste1 {
+  display: flex;
+  right: 20px;
+  position: fixed;
+  font-size: 30px;
+color: #fff4e6;
+}
+
+input {
+  visibility: hidden;
+}
+
+header input:checked ~ #sidemenu {
+  width: 200px;
+  transition: 0.5s ease;
+}
+
+header input: {
+  background: black;
+}
+
+.oque {
+  background: #d1b9a2;
+  margin-top: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+   position: relative;
+top: 129px;
+}
+
+.card-info {
+  display: flex;
+position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+padding-bottom: 100px;
+justify-content: center;
+}
+
+p {
+  margin: 10px;
+}
+
+h1{
+	text-shadow: 3px 0 #4b3832, -2px 0 #4b3832, 0 3px #4b3832, 0 -2px #4b3832, 2px 2px #4b3832, -1px -1px #4b3832, 1px -1px #4b3832, -1px 1px #4b3832;
+    font-size: 30px;
+    z-index: 10;
+	color: #fff4e6;
+}
+
+h2 {
+  margin: 0px 0px 20px;
+  scroll-margin-top: 145px;
+  text-align: center;
+font-size: 40px;
+}
+
+
+video{
+	filter: brightness(0.3);
+}
+
+#home{
+	scroll-margin-top: 145px;
+}
+
+#frase{
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+   font-size: 25px;
+color: #fff4e6;
+}
+
+form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+form input{
+visibility: visible;
+    padding: 15px;
+    background: transparent;
+    border: solid 2px;
+    transition: .5s;
+    outline: none;
+    font-size: 18px;
+	width:90%;
+}
+
+.centre{
+    display:flex;
+    gap: 20px;
+    justify-content: center;
+	align-items: center;
+}
+
+.outros{
+font-size: 20px;
+    justify-content: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::placeholder { color:#4b3832; }
+
+i{
+font-size: 50px;
+cursor: pointer;
+transition: .5s;
+}
+
+i:hover{
+color: #fff4e6;
+transition: .5s;
+}
+
+form input[type="submit"]:hover{
+	background: white;
+	color: #4b3832;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4b3832;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+textarea:focus, textarea:hover, form input:focus, form input:hover{
+	border-radius:8px;
+	transition: .5s;
+}
+
+.paragrafo{
+	width: 35%;
+}
+
+.img-text{
+	width: 35%;
+	height: 35%;
+}
+
+@media (max-width: 500px){
+  .card-info{
+	flex-direction: column;
+  }
+  .paragrafo{
+	width: auto;
+}
+.img-text{
+	width: 100%;
+
+}
+.centre{
+flex-direction: column;
+}
+}
+
+a:focus ~ #sidemenu{
+width: 0;
+}
+</style>
+<body>
+
+
+<header><div><a href="#home"><img class="logo" src="https://i.pinimg.com/originals/f1/53/36/f1533641db0d0adf4b940a9ab33f4f48.png"></img>
+	<h1>Fundação<br>Juan<br>Barbosa</h1></a></div>
+  <input type="checkbox" id="teste"></input>
+  <label class="bi bi-list" for="teste" id="teste1">
+  </label>
+
+<div title="side" id="sidemenu">
+  <a onclick="teste()" href="#titulo1">Quem somos?</a>
+  <a onclick="teste()" href="#titulo2">O que fazemos?</a>
+  <a onclick="teste()" href="#titulo3">Contato</a>
+</div>
+  </header>
+<main>
+  <section id="home" style=" height: 80%; position: relative; z-index: -1;"><div><span id="frase">frase que você vai escolher</span><img src="cachorro-adulto.jpg"></img></div></section>
+<section class="oque" style="padding-top:50px;">
+<div class="centrilize" style="margin: 10px;
+">
+  <h2  id="titulo1">Quem somos?</h2>
+  <div class="card-info"><img class="img-text" src="video/juan.jpg">    <p class="paragrafo">A FJB - Fundação Juan Barbosa é uma entidade legalmente constituída, sem fins lucrativos e declarada de Utilidade Pública Municipal pela Lei nº 6.789/03, tornando-se a primeira fundação de proteção animal do Brasil que trabalha em quatro áreas distintas: saúde, educação, jurídico e social.
+Todas as ações da FJB colaboram e impactam diretamente na qualidade da saúde pública do município, sendo nosso principal objetivo o controle populacional de cães e gatos através da cirurgia de castração. Este é o procedimento que a fundação considera ser o meio mais eficaz para diminuir ou eliminar os problemas causados pela superpopulação, como o abandono, disseminação de doenças, atropelamentos, nascimento de crias indesejadas, entre outros.
+Nosso propósito também é oferecer serviços de qualidade a preços acessíveis para a população menos favorecida economicamente, disponibilizando atendimento veterinário à caninos e felinos. Além disso, realizamos palestras educacionais sobre a guarda responsável de animais domésticos, organizamos eventos mensais de adoção (filhotes e adultos) – sendo todos os adultos (acima de 6 meses) já castrados, vermifugados com avaliação médica gratuita no centro de atendimento veterinário da FJB –, e ainda auxiliamos nas denúncias e resgates de animais em situação de risco, vulnerabilidade, maus tratos e crueldade.</p></img>
+
+  </div>
+</div>
+<div class="centrilize" style="margin: 10px;
+">
+  <h2 id="titulo2">O que fazemos?</h2>
+  <div class="card-info">
+    <p class="paragrafo">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    <img class="img-text" src="video/neoenog.jpg"></img>
+  </div>
+</div>
+</section>
+<section class="oque">
+<h2 id="titulo3">Contato</h2>
+<div class="centre">
+<form>
+<label>Seu nome:</label>
+<input type="text" placeholder="Nome"></input>
+<label>Seu E-mail:</label>
+<input type="email" placeholder="E-mail"></input>
+<label>Digite sua menssagem:</label>
+<textarea style="padding: 15px;
+    background: transparent;
+    border: solid 2px;
+    transition: .5s;
+    outline: none;
+    font-size: 18px; resize: none; width:90%;" placeholder="Texto"></textarea>
+<input type="submit"></input>
+</form>
+
+<div class="outros">
+<h3 style="margin: 0;">Outros</h3>
+<label>Nosso e-mail: <span>blabla@gmail.com</span></label>
+<div style="margin-top: 10px; display:flex; gap: 15px;">
+<i class="bi bi-instagram"></i>
+<i class="bi bi-twitter"></i>
+</div>
+</section>
+</div>
+  </main>
+
+<script>
+	function teste(){
+		document.getElementById("teste").checked = false;
+		console.log("teste");
+}
+</script>
+</body>
+</html>
