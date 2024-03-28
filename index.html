@@ -14,6 +14,8 @@ body,
 html {
   width: fit-content;
   margin: 0;
+    position: relative;
+    z-index: 0;
 }
 
 * {
@@ -27,21 +29,32 @@ html {
   top: 0;
   flex-direction: column;
   height: 100%;
+  top: 130px;
   background: #854442;
   width: 0;
-  top: 130px;
   transition: 0.5s;
   text-wrap: nowrap;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-a {
+a{
   text-decoration: none;
-  padding: 10px 20px;
 font-size: 22px;
 display: flex;
     align-items: center;
     width: 300px;
 color: #fff4e6;
+transition: .5s;
+}
+
+#sidemenu a{
+padding: 10px 20px;
+}
+
+
+a:hover{
+  letter-spacing: 1px;
+  transition: .5s;
 }
 
 header {
@@ -85,7 +98,7 @@ header input: {
 }
 
 .oque {
-  background: #f9dcc3;
+  background:  #f9dcc3;
   margin-top: -1;
   display: flex;
   flex-direction: column;
@@ -98,7 +111,6 @@ main {
   justify-content: center;
   flex-direction: column;
    position: relative;
-top: 129px;
 }
 
 .card-info {
@@ -109,6 +121,14 @@ position: relative;
 padding-bottom: 100px;
 justify-content: center;
 }
+
+.card-info2 {
+  display: flex;
+position: relative;
+padding-bottom: 100px;
+justify-content: center;
+}
+
 
 p {
   margin: 10px;
@@ -128,9 +148,10 @@ h2 {
 font-size: 40px;
 }
 
-
 video{
 	filter: brightness(0.3);
+	height: 100vh;
+    object-fit: cover;
 }
 
 #home{
@@ -145,6 +166,7 @@ position: absolute;
     z-index: 1;
    font-size: 25px;
 color: #fff4e6;
+text-align: center;
 }
 
 form{
@@ -235,9 +257,27 @@ textarea:focus, textarea:hover, form input:focus, form input:hover{
 	height: 350px;
 }
 
+.imgorder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	width: 25%;
+margin-top: 15px;
+}
+
+.cicle{
+	width: 200px;
+	border-radius: 50%;
+}
+
 @media (max-width: 500px){
   .card-info{
 	flex-direction: column;
+	align-items: center;
+  }
+ .card-info2{
+	flex-direction: column;
+	align-items: center;
   }
   .paragrafo{
 	width: auto;
@@ -249,11 +289,86 @@ textarea:focus, textarea:hover, form input:focus, form input:hover{
 .centre{
 flex-direction: column;
 }
+
+.imgorder{
+	width: 90%;
+}
 }
 
 a:focus ~ #sidemenu{
 width: 0;
 }
+
+.center-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    z-index: 1;
+    transform: rotate(90deg);
+}
+
+
+
+.round {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    
+}
+
+#cta{
+    width:100%; cursor: pointer; position: absolute;
+}
+
+#cta .arrow{left: 30%;}
+.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
+.segunda{margin-left: 8px;}
+.next {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+}
+
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round:hover .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round:hover .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+
 </style>
 <body>
 
@@ -271,7 +386,17 @@ width: 0;
 </div>
   </header>
 <main>
-  <section id="home" style=" height: 80%; position: relative; z-index: -1;"><div><span id="frase">frase que você vai escolher</span><img style="width: 100%;" src="video/cachorro-adulto.jpg"></img></div></section>
+  <section id="home" style="height: 100vh;
+    position: relative;
+    z-index: 0;"><div><span id="frase">Na natureza está a preservação do mundo.</span>
+<div class="center-con">
+    <div class="round">
+        <a href="#titulo1"><div id="cta">
+            <span class="arrow primera next "></span>
+            <span class="arrow segunda next "></span>
+        </div></a>
+    </div>
+</div><img style="width: 100%;" src="video/cachorro-adulto.jpg"></img></div></section>
 <section class="oque" style="padding-top:50px;">
 <div class="centrilize" style="margin: 10px;
 ">
@@ -282,12 +407,20 @@ Nosso propósito também é oferecer serviços de qualidade a preços acessívei
 
   </div>
 </div>
-<div class="centrilize" style="margin: 10px;
-">
+<div class="centrilize" style="    margin: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+margin: 20px;">
   <h2 id="titulo2">O que fazemos?</h2>
-  <div class="card-info">
-    <p class="paragrafo">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-    <img class="img-text" src="video/neoenog.jpg"></img>
+  <p class="paragrafo">habilitado a oferecer ampla variedade de serviços destinados a caninos e felinos domésticos. Confira abaixo:</p>
+  <div class="card-info2">
+ 	<div class="imgorder"><img class="cicle" src="video/neoenog.jpg"></img>
+		<h3>APOIO</h3><p>Apoio geral a animais em risco.</p></div>
+        <div class="imgorder"><img class="cicle" src="video/nogeneo2.jpeg"></img>
+<h3>CONSULTAS</h3><p>Procedimentos gerais de consulta.</p></div>
+        <div class="imgorder"><img class="cicle" src="video/nog.jpeg"></img><h3>PALESTRAS EDUCACIONAIS</h3><p>Escolas e entidades: conscientização sobre a guarda responsável de animais domésticos.</p></div></div></div>
   </div>
 </div>
 </section>
@@ -320,11 +453,21 @@ Nosso propósito também é oferecer serviços de qualidade a preços acessívei
 </div>
   </main>
 
+<script src="https://unpkg.com/scrollreveal@4"></script>
 <script>
 	function teste(){
 		document.getElementById("teste").checked = false;
 		console.log("teste");
 }
+
+ScrollReveal().reveal('#titulo1', { duration: '2000', origin: 'bottom', distance: '10px'});
+ScrollReveal().reveal('#titulo2', { duration: '2000', origin: 'bottom', distance: '10px'});
+ScrollReveal().reveal('#titulo3', { duration: '2000', origin: 'bottom', distance: '10px'});
+ScrollReveal().reveal('#frase', { duration: '2000', origin: 'bottom', distance: '10px'});
+ScrollReveal().reveal('.img-text', { duration: '2000', origin: 'left', distance: '160px'});
+ScrollReveal().reveal('.paragrafo', { duration: '2000', origin: 'right', distance: '160px'});
+ScrollReveal().reveal('.imgorder', { duration: '2000', origin: 'bottom', distance: '60px'});
+ScrollReveal().reveal('.centre', { duration: '2000', origin: 'bottom', distance: '60px'});
 </script>
 </body>
 </html>
