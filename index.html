@@ -178,6 +178,7 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+align-items: stretch;
     gap: 10px;
     font-size: 20px;
 }
@@ -190,7 +191,6 @@ visibility: visible;
     transition: .5s;
     outline: none;
     font-size: 18px;
-	width:90%;
 }
 
 .centre{
@@ -198,6 +198,7 @@ visibility: visible;
     gap: 20px;
     justify-content: center;
 	align-items: center;
+padding-bottom:40px;
 }
 
 .outros{
@@ -432,18 +433,20 @@ margin: 20px;">
 <section class="oque">
 <h2 id="titulo3">Contato</h2>
 <div class="centre">
-<form>
+<form action="https://formsubmit.co/your@email.com" method="POST"">
 <label>Seu nome:</label>
 <input type="text" placeholder="Nome"></input>
 <label>Seu E-mail:</label>
 <input type="email" placeholder="E-mail"></input>
+<label>Informe o assunto:</label>
+<input type="text" placeholder="Assunto"></input>
 <label>Digite sua menssagem:</label>
 <textarea style="padding: 15px;
     background: transparent;
     border: solid 2px;
     transition: .5s;
     outline: none;
-    font-size: 18px; resize: none; width:90%;" placeholder="Texto"></textarea>
+    font-size: 18px; resize: none;" placeholder="Texto"></textarea>
 <input type="submit"></input>
 </form>
 
@@ -458,24 +461,12 @@ margin: 20px;">
 </div>
   </main>
 
-<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 	function teste(){
 		document.getElementById("teste").checked = false;
 		console.log("teste");
 }
-
-window.sr = new ScrollReveal();
-
-ScrollReveal().reveal('#titulo1', { duration: '2000', origin: 'bottom', distance: '10px'});
-ScrollReveal().reveal('#titulo2', { duration: '2000', origin: 'bottom', distance: '10px'});
-ScrollReveal().reveal('#titulo3', { duration: '2000', origin: 'bottom', distance: '10px'});
-ScrollReveal().reveal('#frase', { duration: '2000', origin: 'bottom', distance: '10px'});
-ScrollReveal().reveal('.img-text', { duration: '2000', origin: 'left', distance: '160px'});
-ScrollReveal().reveal('.paragrafo', { duration: '2000', origin: 'right', distance: '160px'});
-ScrollReveal().reveal('.imgorder', { duration: '2000', origin: 'bottom', distance: '60px'});
-ScrollReveal().reveal('.centre', { duration: '2000', origin: 'bottom', distance: '60px'});
 </script>
 </body>
 </html>
