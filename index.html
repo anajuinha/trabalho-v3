@@ -298,6 +298,17 @@ margin-top: 15px;
 	border-radius: 50%;
 }
 
+.center-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    z-index: 1;
+    transform: rotate(90deg);
+}
+	
 @media (max-width: 500px){
   .card-info{
 	flex-direction: column;
@@ -307,6 +318,8 @@ margin-top: 15px;
 	flex-direction: column;
 	align-items: center;
   }
+
+  .center-con {bottom: 100px;}
 
   form{
 	width:90%;
@@ -330,19 +343,6 @@ flex-direction: column;
 a:focus ~ #sidemenu{
 width: 0;
 }
-
-.center-con {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    z-index: 1;
-    transform: rotate(90deg);
-}
-
-
 
 .round {
     position: absolute;
