@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>HTML 5 Boilerplate</title>
+	<link rel="stylesheet" href="style.css">
   </head>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Overlock+SC&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Overlock+SC&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -20,6 +21,7 @@ html {
     position: relative;
     z-index: 0;
 overflow-x:hidden;
+width:100%;
 }
 
 * {
@@ -77,7 +79,6 @@ padding: 15px;
   width: 38%;
   transform: rotateY(180deg);
   position: relative;
-  left: 20px;
 }
 
 #teste1 {
@@ -97,8 +98,29 @@ header input:checked ~ #sidemenu {
   transition: 0.5s ease;
 }
 
-header input: {
-  background: black;
+#teste1:after {
+  content: "⨉";
+    transform: scale(0);
+    transition: .5s;
+    right: 22px;
+    position: fixed;
+    top: 46px;
+}
+
+#teste1:before {
+	transform: scale(1);
+transition: .5s;
+}
+
+header input:checked ~ #teste1:after{
+	transform: scale(1);
+transition-delay: 250ms;
+transition: .5s;
+}
+
+header input:checked ~ #teste1:before {
+     transform: scale(0);
+    transition: .5s;
 }
 
 .oque {
@@ -160,6 +182,7 @@ video{
 
 #home{
 	scroll-margin-top: 145px;
+padding: 0;
 }
 
 #frase{
@@ -284,6 +307,10 @@ margin-top: 15px;
 	flex-direction: column;
 	align-items: center;
   }
+
+  form{
+	width:90%;
+  }
   .paragrafo{
 	width: auto;
 }
@@ -373,12 +400,17 @@ width: 0;
     animation-timing-function:linear;
 }
 
-
+object{
+	width: 100%;
+	height: 100svh;
+	position: relative;
+	top: 130px;
+}
 </style>
 <body>
 
 
-<header><div><a href="#home"><img class="logo" src="https://i.pinimg.com/originals/f1/53/36/f1533641db0d0adf4b940a9ab33f4f48.png"></img>
+<header><div><a href="#home" onclick="loadhome2()"><img class="logo" src="https://i.pinimg.com/originals/f1/53/36/f1533641db0d0adf4b940a9ab33f4f48.png"></img>
 	<h1>Fundação<br>Juan<br>Barbosa</h1></a></div>
   <input type="checkbox" id="teste"></input>
   <label class="bi bi-list" for="teste" id="teste1">
@@ -390,7 +422,7 @@ width: 0;
   <a onclick="teste()" href="#titulo3">Contato</a>
 </div>
   </header>
-<main>
+<main id="prince">
   <section id="home" style="height: 100vh;
     position: relative;
     z-index: 0;"><div>
@@ -426,7 +458,7 @@ margin: 20px;">
 		<h3>APOIO</h3><p>Apoio geral a animais em risco.</p></div>
         <div class="imgorder"><img class="cicle" src="video/nogeneo2.jpeg"></img>
 <h3>CONSULTAS</h3><p>Procedimentos gerais de consulta.</p></div>
-        <div class="imgorder"><img class="cicle" src="video/nog.jpeg"></img><h3>PALESTRAS EDUCACIONAIS</h3><p>Escolas e entidades: conscientização sobre a guarda responsável de animais domésticos.</p></div></div></div>
+        <div class="imgorder" onclick="loadhome()"><img class="cicle" src="video/nog.jpeg"></img><h3>PALESTRAS EDUCACIONAIS</h3><p>Escolas e entidades: conscientização sobre a guarda responsável de animais domésticos.</p></div></div></div>
   </div>
 </div>
 </section>
